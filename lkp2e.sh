@@ -65,13 +65,6 @@ setup_ssh_keys() {
     mkdir -p "${SSH_DIR}"
     chmod 700 "${SSH_DIR}"
 
-    # Add to .gitignore so the private key doesn't get committed
-    local gitignore="${WORKSPACE_DIR}/.gitignore"
-    if [[ -f "${gitignore}" ]] && ! grep -qF '.lkp2e/' "${gitignore}"; then
-        echo '.lkp2e/' >> "${gitignore}"
-        log "Added .lkp2e/ to .gitignore"
-    fi
-
     if [[ ! -f "${SSH_KEY}" ]]; then
         log "Generating ED25519 SSH keypair → ${SSH_KEY}"
         ssh-keygen -t ed25519 -f "${SSH_KEY}" -N "" -C "lkp2e-docker-$(date +%Y%m%d)"

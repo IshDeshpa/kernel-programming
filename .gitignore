@@ -1,1 +1,5 @@
-.lkp2e/
+*.img
+*.qcow2
+vm/seed/
+vm/seed.iso
+*.tar.xz

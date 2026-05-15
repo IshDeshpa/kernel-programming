@@ -1,0 +1,3 @@
+[submodule "kernel-hardening-checker"]
+	path = kernel-hardening-checker
+	url = git@github.com:a13xp0p0v/kernel-hardening-checker.git
